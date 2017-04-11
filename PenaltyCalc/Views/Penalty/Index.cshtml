@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PenaltyCalc.Models.Country>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View</h2>
+<p>Enter date</p>
+<form action="/Penalty/Result" method="get">
+
+    day:<input type="text" name="d" />
+    month:<input type="text" name="m" />
+    year:<input type="text" name="y" />
+    <br />
+    day:<input type="text" name="d2" />
+    month:<input type="text" name="m2" />
+    year:<input type="text" name="y2" />
+    <br />
+    <p>Select Country</p>
+    <select name="c">
+        @foreach (var item in Model)
+        {
+            <option value=@item.ID>@item.Name</option>
+        }
+    </select>
+    <input type="submit" value="ok" />
+</form>
